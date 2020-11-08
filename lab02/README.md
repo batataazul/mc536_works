@@ -5,4 +5,4 @@ Lab para exploração de dois datasets em JSON através do Python, recuperação
 
 ## Link para Notebook
 
-[Notebook](notebooks/lab-logic-model-dbpedia.ipynb)
+[Notebook](notebook/lab-logic-model-dbpedia.ipynb)

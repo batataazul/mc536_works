@@ -6,7 +6,7 @@ Tarefa consiste em importar duas bases de dados em formatos diferentes usando o 
 
 ## Tarefa 1 
 
-  [Notebook](notebooks/data-api-python.ipynb)
+  [Notebook](notebook/data-api-python.ipynb)
   
 ## Tarefa 2
 
