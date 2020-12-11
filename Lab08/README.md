@@ -115,7 +115,14 @@ Liste todos os códigos ChEBI dos componentes disponíveis.
 
 #### Resolução
 ~~~xquery
-(escreva aqui a resolução em XQuery)
+let $chebi := doc('https://raw.githubusercontent.com/santanche/lab2learn/master/data/pubchem/pubchem-chebi-synonyms.xml')
+
+for $i in ($chebi/PC-DataSet/InformationList/Information),
+    $ped in ($i//Synonym)
+return if (substring(data($ped),1,5) = 'CHEBI')
+then (data($ped),'&#xa;')
+else ('')
+
 ~~~
 
 ### Questão 3.2
