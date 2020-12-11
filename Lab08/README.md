@@ -147,5 +147,13 @@ Para cada código ChEBI, liste os sinônimos e o nome que aparece para o mesmo c
 
 #### Resolução
 ~~~xquery
-(escreva aqui a resolução em XQuery)
+let $chebi := doc('https://raw.githubusercontent.com/santanche/lab2learn/master/data/pubchem/pubchem-chebi-synonyms.xml')
+let $dron := doc('https://raw.githubusercontent.com/santanche/lab2learn/master/data/faers-2017-dron/dron.xml')
+
+for $i in ($chebi/PC-DataSet/InformationList/Information),
+    $ped in ($i//Synonym),
+    $drug in ($dron//drug)
+let $id := $drug//@id
+where substring(data($ped),1,5) = 'CHEBI' and concat('http://purl.obolibrary.org/obo/CHEBI_',substring(data($ped),7)) = $id
+return(data($ped),':','&#xa;',data($i),'name Dron:',data($drug//@name),'&#xa;')
 ~~~
