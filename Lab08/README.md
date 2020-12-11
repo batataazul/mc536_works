@@ -155,5 +155,5 @@ for $i in ($chebi/PC-DataSet/InformationList/Information),
     $drug in ($dron//drug)
 let $id := $drug//@id
 where substring(data($ped),1,5) = 'CHEBI' and concat('http://purl.obolibrary.org/obo/CHEBI_',substring(data($ped),7)) = $id
-return(data($ped),':','&#xa;',data($i),'name Dron:',data($drug//@name),'&#xa;')
+return(data($ped),':','&#xa;',data($i/Synonym),'name Dron:',data($drug//@name),'&#xa;')
 ~~~
